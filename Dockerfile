@@ -15,6 +15,7 @@ FROM cloudposse/geodesic:$VERSION-$OS
 ENV DOCKER_IMAGE="mudpuppy12/devops"
 ENV DOCKER_TAG="latest"
 
+ENV MOTD_URL=""
 
 ENV LESS=R
 ENV TERM=xterm-256color

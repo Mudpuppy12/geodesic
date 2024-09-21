@@ -27,22 +27,10 @@ ENV AWS_REGION_ABBREVIATION_TYPE=fixed
 ENV AWS_DEFAULT_REGION=us-east-1
 ENV AWS_DEFAULT_SHORT_REGION=ue1
 
-
-#1password cli
-
-RUN curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
-RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" | tee /etc/apt/sources.list.d/1password.list
-RUN mkdir -p /etc/debsig/policies/AC2D62742012EA22/
-RUN curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
-RUN mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
-RUN curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
-
 # Install the packages
 
 RUN apt-get update && apt-get install -y -u \
     atmos \
-    1password-cli \
-    yubikey-manager \
     ansible \
     python3-boto3
   

@@ -2,7 +2,7 @@
 
 Docker container for devops tools
 
-##Setup
+## Setup
 
     Add 
         export PATH=$HOME/.local/bin:$PATH to your profile
@@ -15,4 +15,5 @@ Docker container for devops tools
     $ geodesic
 
 
-
+# Links
+ * https://github.com/cloudposse/geodesic
